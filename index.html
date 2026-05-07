@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document to PDF Converter</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="converter-panel" aria-labelledby="pageTitle">
+      <div class="panel-header">
+        <p class="eyebrow">AWS S3 + Lambda</p>
+        <h1 id="pageTitle">Document to PDF Converter</h1>
+      </div>
+
+      <div class="upload-box">
+        <input
+          type="file"
+          id="fileInput"
+          class="file-input"
+          accept=".doc,.docx,.ppt,.pptx,.xls,.xlsx,.txt,.rtf,.odt,.pdf"
+        >
+        <label for="fileInput" class="file-label">
+          <span class="file-icon" aria-hidden="true">PDF</span>
+          <span id="fileName">Choose a document</span>
+        </label>
+      </div>
+
+      <button id="convertButton" type="button" onclick="uploadFile()">
+        Convert to PDF
+      </button>
+
+      <div class="progress" aria-hidden="true">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+      <div id="download" class="download"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
